@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        .main
+        {
+            height: 100vh;
+            background-color:  #000000df;;
+        }
+        #cursor{
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: aqua;
+            position: absolute;
+            transition: .2s linear;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div id="cursor"></div>
+    </div>
+</body>
+</html>
+<script >
+    const main = document.querySelector(".main");
+    const cursor = document.querySelector("#cursor");
+
+   
+    main.addEventListener("mousemove", function(move)
+    {
+        // console.log(move) // it give x and y axis of the mouse ;
+        // console.log(move.x) // it give x axis of the mouse ;
+        // console.log(move.y) // it give y axis of the mouse ;
+        cursor.style.left = move.x+"px";
+        cursor.style.top = move.y+"px";
+    })
+</script>
